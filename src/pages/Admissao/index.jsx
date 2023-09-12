@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '../../components/Logo';
 import { Link } from 'react-router-dom';
 import Switcher from '../../components/Switcher';
@@ -12,10 +12,11 @@ import getLocalUserData from '../../functions/getLocalUserData.js'
 // import { Container } from './styles';
 
 function Admissao() {
+    const [percentual, setPercentual] = useState(0)
+
     useEffect(() => {
-        getLocalUserData()
+        setPercentual(getLocalUserData())
     
-      
     }, [])
     
 
@@ -27,7 +28,7 @@ function Admissao() {
             <p>Precisamos de algumas informações sobre você. Para isso, tenha em mãos os seus documentos e de seu dependentes.</p>
             <br />
             <Link to='/dados-pessoais'>
-                <Switcher icon={dadosPessoaisIcon} name={'Dados Pessoais'} progress={20} />
+                <Switcher icon={dadosPessoaisIcon} name={'Dados Pessoais'} progress={percentual[0]} />
             </Link>
             <Link to='/foto'>
                 <Switcher icon={fotoIcon} name={'Foto'} progress={20} />
