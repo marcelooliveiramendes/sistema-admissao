@@ -1,0 +1,22 @@
+@mixin tamanho{
+    width: 150px;
+    height: 40px
+}
+
+.btnBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+
+    .btnVoltar{
+        @include tamanho;
+        border-color: #41873E ;
+        color: #41873E;
+    }
+    .btnSalvar{
+        @include tamanho;
+        background: #41873E;
+    }
+}

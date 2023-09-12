@@ -1,0 +1,32 @@
+
+.fotoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    .btnPictureCapture{
+        background-color: #41873E;
+        color: #fff;
+        font-weight: 600;
+        width: 200px;
+        height: 50px;
+        &:hover{
+            background-color: transparent;
+            box-shadow: none;
+            color: #41873E;
+            border: 1px solid #41873E;
+        }
+    }
+    .btnImportFile{
+        background-color: transparent;
+        border: none;
+        color: #41873E;
+        text-transform: uppercase;
+        box-shadow: none;
+        &:hover{
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}

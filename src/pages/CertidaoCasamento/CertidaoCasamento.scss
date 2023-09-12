@@ -1,0 +1,41 @@
+
+
+.containerFoto{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+    position: relative;
+
+    h2{
+        color: #5c5c5c;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #imgPreviewCertidao{
+            width: 250px;
+            height: 200px;
+            object-fit:contain;
+        }
+        h3{
+            margin-top: 30px;
+            color: #434343;
+        }
+        p{
+            margin-top: 10px;
+            width: 80%;
+            text-align: center;
+        }
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding: 10px;
+}

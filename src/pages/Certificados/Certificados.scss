@@ -1,0 +1,77 @@
+
+
+.containerCertificados{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+    position: relative;
+
+    h2{
+        color: #5c5c5c;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .cadastroCertif{
+            width: 100%;    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+
+            p{
+                width: 80%;
+                margin: 40px 0pc;
+            }
+
+            .btnCadastrarNovoDep{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                button{
+                    width: 180px;
+                    height: 45px;
+                    border: none;
+                    border-radius: 20px;
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    background-color: #247DCF;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+            }
+
+        }
+    
+        h3{
+            margin-top: 30px;
+            color: #434343;
+        }
+
+        .certificados{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-top: 1px solid #ccc;
+        }
+    }
+}
+
+footer{
+    width: 100vw;
+    position: relative;
+    margin-top: 30px;
+}

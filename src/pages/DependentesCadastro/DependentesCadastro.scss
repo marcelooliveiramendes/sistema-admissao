@@ -1,0 +1,53 @@
+
+
+.containerDependentesCadastro{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+    position: relative;
+
+    h2{
+        color: #5c5c5c;
+    }
+
+    .swtBox{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        form{
+            width: 100%;    
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 20px;
+            margin-bottom: 30px;
+
+        }
+    
+        h3{
+            margin-top: 30px;
+            color: #434343;
+        }
+    
+        
+        .dependentes{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-top: 1px solid #ccc;
+        }
+    }
+    footer{
+        width: calc(100vw - 60px);
+        margin: 0px;
+    }
+    
+}

@@ -1,0 +1,35 @@
+.switcherContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+    border-bottom: 1px solid #d4d4d4;
+    
+
+    .title{
+        font-size: 18px;
+    }
+
+    .chevron{
+        font-size: 22px;
+        color: #6b6b6b;
+    }
+
+    
+    .icon-box{
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ccc;
+        img{
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .progress-bar{
+        width: 50px;
+    }
+}

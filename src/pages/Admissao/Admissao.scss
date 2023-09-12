@@ -1,0 +1,34 @@
+.container{
+    width: calc(100vw - 0px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+
+    h2{
+        color: #5c5c5c;
+    }
+    
+    footer{
+        display: flex;
+        justify-content: center;
+        width: calc(100%);
+    
+        .btnVoltar{
+            
+            button{
+                background: transparent;
+                border: 1px solid #41873E;
+                color: #41873E;
+                width: 100%;
+            
+                &:hover{
+                    background: #41873E;
+                    color: #fff;
+                }
+            }
+        }
+    
+    }
+
+}

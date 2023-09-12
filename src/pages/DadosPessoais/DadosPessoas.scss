@@ -1,0 +1,23 @@
+#formularioDadosPessoais{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 60px;
+
+    .swtBox{
+        display: flex;
+        flex-direction: column;
+    }
+    .MuiOutlinedInput-notchedOutline{
+        border-radius: 8px;
+    }
+
+    .formNascExterior{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+   
+}
