@@ -4,9 +4,14 @@ import './CertidaoCasamento.scss';
 import certidaoImg from '../../img/certidao.png'
 import BtnActions from '../../components/BtnActions';
 import CameraFunctions from '../../components/CameraFunctions';
+import { useNavigate } from "react-router-dom";
 
 function CertidaoCasamento() {
   const [imgCarregada, setImgCarregada] = useState(false)
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const handleCapture = (e) => {
     const inputTarget = e.target
@@ -43,7 +48,7 @@ function CertidaoCasamento() {
             </div>            
         </div>
         <footer>
-          <BtnActions />  
+        <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} />  
         </footer>
     </>
   );

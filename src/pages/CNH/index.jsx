@@ -12,6 +12,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import AutocompleteInput from '../../components/Autocomplete';
 
+import { useNavigate } from "react-router-dom";
+
 function CNH() {
   const [tituloLoaded, setTituloLoaded] = useState(false)
   const ufsBrasil = [
@@ -81,6 +83,11 @@ function CNH() {
     }
   }
 
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
+
   return (
     <>
         <Logo />
@@ -118,7 +125,7 @@ function CNH() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+        <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

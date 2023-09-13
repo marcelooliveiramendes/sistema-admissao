@@ -9,12 +9,19 @@ import TextField from '@mui/material/TextField';
 import AutocompleteInput from '../../components/Autocomplete';
 import axios from 'axios';
 
+import { useNavigate } from "react-router-dom";
+
 function DadosEndereco() {
   const [comprovResid, setComprovResid] = useState(false)
   const [logradouro, setLogradouro] = useState('')
   const [bairro, setBairro] = useState('')
   const [uf, setUF] = useState('')
   const [localidade, setLocalidade] = useState('')
+
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const ufsBrasil = [
     "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
@@ -90,7 +97,7 @@ function DadosEndereco() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+        <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

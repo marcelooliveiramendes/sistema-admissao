@@ -4,11 +4,16 @@ import './Reservista.scss';
 import reservistaImg from '../../img/Reservista.png'
 import BtnActions from '../../components/BtnActions';
 import CameraFunctions from '../../components/CameraFunctions';
+import { useNavigate } from "react-router-dom";
 
 import TextField from '@mui/material/TextField';
 
 function Reservista() {
   const [tituloLoaded, setTituloLoaded] = useState(false)
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const handleCapture = (e) => {
     const inputTarget = e.target
@@ -54,7 +59,7 @@ function Reservista() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+          <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

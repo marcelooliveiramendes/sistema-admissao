@@ -4,9 +4,15 @@ import './Foto.scss';
 import fotoImg from '../../img/foto.png'
 import BtnActions from '../../components/BtnActions';
 import CameraFunctions from '../../components/CameraFunctions';
+import { useNavigate } from "react-router-dom";
 
 function Foto() {
   const [imgCarregada, setImgCarregada] = useState(false)
+
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const handleCapture = (e) => {
     const inputTarget = e.target
@@ -42,7 +48,7 @@ function Foto() {
             </div>            
         </div>
         <footer>
-          <BtnActions />  
+          <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

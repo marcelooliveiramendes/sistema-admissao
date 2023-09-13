@@ -11,9 +11,16 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import TextField from '@mui/material/TextField';
 
+import { useNavigate } from "react-router-dom";
+
 function RG() {
   const [frenteRgLoaded, setFrenteRgLoaded] = useState(false)
   const [versoRgLoaded, setVersoRgLoaded] = useState(false)
+
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const handleCaptureFrente = (e) => {
     const inputTarget = e.target
@@ -106,7 +113,7 @@ function RG() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+          <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

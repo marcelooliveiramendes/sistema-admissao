@@ -4,12 +4,19 @@ import './TituloEleitoral.scss';
 import titulo from '../../img/titulo.png'
 import BtnActions from '../../components/BtnActions';
 import CameraFunctions from '../../components/CameraFunctions';
+import { useNavigate } from "react-router-dom";
+
 
 import TextField from '@mui/material/TextField';
 
 function TituloEleitor() {
   const [tituloLoaded, setTituloLoaded] = useState(false)
 
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
+  
   const handleCapture = (e) => {
     const inputTarget = e.target
     const file = inputTarget.files[0]
@@ -55,7 +62,7 @@ function TituloEleitor() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+          <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

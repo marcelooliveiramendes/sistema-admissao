@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './DadosPessoas.scss'
 
 import Logo from './../../components/Logo/index';
-import AutocompleteInput from '../../components/Autocomplete';
 
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -26,9 +25,9 @@ function DadosPessoais() {
     const [sexo, setSexo] = useState('')
     const [raca, setRaca] = useState('')
     const [estadoCivil, setEstadoCivil] = useState('')
-    const [nacionalidade, setNacionalidade] = useState(dadosLocal.nacionalidade)
-    const [nacionalidadeNascExt, setNacionalidadeNascExt] = useState(dadosLocal.paisNacionalidade)
-    const [estadoNaturalidade, setEstadoNaturalidade] = useState(dadosLocal.estadoNaturalidade)
+    const [nacionalidade, setNacionalidade] = useState(dadosLocal !== null ? dadosLocal.nacionalidade : "")
+    const [nacionalidadeNascExt, setNacionalidadeNascExt] = useState(dadosLocal !== null ? dadosLocal.paisNacionalidade : "")
+    const [estadoNaturalidade, setEstadoNaturalidade] = useState(dadosLocal !== null ? dadosLocal.estadoNaturalidade : "")
     
     useEffect(() => {
       getDados()     
@@ -59,7 +58,7 @@ function DadosPessoais() {
           nascExterior: document.querySelector('#swt_nascExterior').checked,
           paisNacionalidade: document.querySelector('#ztxt_paisNacionalidade').value,
           estadoNaturalidade: document.querySelector('#ztxt_estadoNaturalidade').value,
-          municipioNaturalidade: document.querySelector('#txt_municipioNasc').textContent,
+          municipioNaturalidade: document.querySelector('#txt_municipioNasc').value,
           grauInstrucao: document.querySelector('#ztxt_grauInstrucao').value
         }
       }
@@ -76,11 +75,15 @@ function DadosPessoais() {
 
       }
 
-      localStorage.setItem('dadosPessoais', JSON.stringify(campos))
+      try{
+        localStorage.setItem('dadosPessoais', JSON.stringify(campos))
+        console.log(JSON.parse(localStorage.getItem('dadosPessoais')))
+        window.location.href ='/admissao'
 
-      console.log(JSON.parse(localStorage.getItem('dadosPessoais')))
+      } catch(err){
+        console.log('Erro ao salvar dados');
+      }
 
-      // navigate("/admissao");
     }
 
     const getDados = () => {
@@ -94,8 +97,14 @@ function DadosPessoais() {
         setSexo(dadosLocal.sexo)
         setRaca(dadosLocal.raca)
         setEstadoCivil(dadosLocal.estadoCivil)
+        setNacionalidade(dadosLocal.nacionalidade)
         
-
+        if(dadosLocal.nascExterior){
+          setNascExterior(dadosLocal.nascExterior)
+          setNacionalidadeNascExt(dadosLocal.paisNacionalidade)
+          setEstadoNaturalidade(dadosLocal.estadoNaturalidade)
+          // document.querySelector('#txt_municipioNasc').value = dadosLocal.municipioNaturalidade
+        }
       }
     }
    
@@ -745,7 +754,7 @@ function DadosPessoais() {
                           )}
                         />
                         <Autocomplete
-                          disablePortal
+                          freeSolo
                           id={'ztxt_estadoNaturalidade'}
                           options={estadosDoBrasil}
                           defaultValue={estadoNaturalidade}
@@ -753,7 +762,7 @@ function DadosPessoais() {
                         />
                         <TextField id="txt_municipioNasc" label="Município de Nascimento (naturalidade)" variant="outlined" />
                         <Autocomplete
-                          disablePortal
+                          freeSolo
                           id={'ztxt_grauInstrucao'}
                           options={grauDeInstrucaoRais}
                           renderInput={(params) => <TextField {...params} label={"Grau de Instrução (RAIS)"} />}

@@ -12,9 +12,16 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import TextField from '@mui/material/TextField';
 import AutocompleteInput from '../../components/Autocomplete';
 
+import { useNavigate } from "react-router-dom";
+
 function CarteiraTrabalho() {
   const [carteiraInfo, setCarteiraInfo] = useState(false)
   const [qualifCivil, setQualifCivil] = useState(false)
+
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
 
   const ufsBrasil = [
     "Acre",
@@ -137,7 +144,7 @@ function CarteiraTrabalho() {
             </div>            
         </div>
         <footer>
-          <BtnActions /> 
+        <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

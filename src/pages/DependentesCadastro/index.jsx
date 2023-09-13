@@ -18,11 +18,17 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import AutocompleteInput from '../../components/Autocomplete';
 import BtnActions from '../../components/BtnActions';
+import { useNavigate } from "react-router-dom";
 
 // import { Container } from './styles';
 
 function DependentesCadastro() {
     const [tituloLoaded, setTituloLoaded] = useState(false)
+
+    const navigate = useNavigate();
+    const cancelAction = () => {  
+      navigate("/admissao");
+    }
 
     const tiposDeParentesco = [
         "Pai",
@@ -230,7 +236,7 @@ function DependentesCadastro() {
 
                 </div>
                 <footer>
-                    <BtnActions />
+                <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
                 </footer>
             </div>
         </>

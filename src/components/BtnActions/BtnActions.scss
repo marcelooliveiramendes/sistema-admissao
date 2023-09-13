@@ -14,9 +14,16 @@
         @include tamanho;
         border-color: #41873E ;
         color: #41873E;
+        &:hover{
+            border-color: #41873E ;
+            color: #41873E;
+        }
     }
     .btnSalvar{
         @include tamanho;
         background: #41873E;
+        &:hover{
+            background: #41873E;
+        }
     }
 }

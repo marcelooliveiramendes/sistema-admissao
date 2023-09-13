@@ -5,6 +5,7 @@ import fotoImg from '../../img/foto.png'
 import BtnActions from '../../components/BtnActions';
 import CameraFunctions from '../../components/CameraFunctions';
 import TextField from '@mui/material/TextField';
+import { useNavigate } from "react-router-dom";
 
 function CertificadosCadastro() {
   const [imgCarregada, setImgCarregada] = useState(false)
@@ -26,6 +27,11 @@ function CertificadosCadastro() {
     } else {
       setImgCarregada(false)
     }
+  }
+
+  const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
   }
   return (
     <>
@@ -50,7 +56,7 @@ function CertificadosCadastro() {
             </div>            
         </div>
         <footer>
-          <BtnActions />  
+        <BtnActions cancelFuncion={cancelAction} saveFunction={cancelAction} /> 
         </footer>
     </>
   );

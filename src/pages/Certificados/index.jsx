@@ -7,9 +7,15 @@ import addIcon from '../../icons/add.svg'
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
 
+import { useNavigate } from "react-router-dom";
+
 
 function Certificados() {
-    
+    const navigate = useNavigate();
+    const cancelAction = () => {  
+        navigate("/admissao");
+    }
+
     return (
         <>
             <Logo />

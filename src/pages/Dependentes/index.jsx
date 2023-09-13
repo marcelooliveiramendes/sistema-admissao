@@ -7,10 +7,14 @@ import addIcon from '../../icons/add.svg'
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
+import { useNavigate } from "react-router-dom";
 
 
 function Dependentes() {
-    
+    const navigate = useNavigate();
+  const cancelAction = () => {  
+    navigate("/admissao");
+  }
     return (
         <>
             <Logo />
