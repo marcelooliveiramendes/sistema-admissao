@@ -9,10 +9,10 @@ export default function ComboBox({dados, label, campoId}) {
     <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
             <Autocomplete
-            disablePortal
-            id={campoId}
-            options={dados}
-            renderInput={(params) => <TextField {...params} label={label} />}
+              disablePortal
+              id={campoId}
+              options={dados}
+              renderInput={(params) => <TextField {...params} label={label} />}
             />
 
         </FormControl>
